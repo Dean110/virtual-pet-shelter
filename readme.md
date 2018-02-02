@@ -1,24 +1,24 @@
-Virtual Pet Shelter
+﻿Virtual Pet Shelter
 
 Our week three project.  From our friends at WeCanCodeIT - "So, you have some experience under your belt in the care and feeding of a virtual pet. It’s time to share that with the community! Time to volunteer!""
 
 
 Setup
 
-[ ] Create a Java project in Eclipse named virtual-pet-shelter.
-[ ] Be sure to set up your testing environment and use the second script, now that you have experience with both JUnit and Hamcrest.
-[ ] Set up a .gitignore. Remember through bash you can type subl .gitignore and it will open a text editor for you. Its contents should include (at minimum):
-	[ ]   .classpath
-	[ ]   .gradle/
-	[ ]   .project
-	[ ]   .settings/
-	[ ]   bin/
-[ ] Create a README.md file in your project folder to describe what you’ve done with your project. No fancy formatting is necessary. Just separate paragraphs with an empty line. (If you’d like to learn more about Markdown formatting, check out the Github Markdown Guide.)
-[ ] Create a GitHub repository also named virtual-pet-shelter and set it up so that you can push your code there from your Eclipse project. Do this now. It’s the least fun part, so just get it out of the way.
-[ ] Create the following classes along with the test class(es) you feel are necessary:
-	[ ] VirtualPet: You can start with your class from last week’s assignment or create another.
-	[ ] VirtualPetShelter: Homeless virtual pets need a place to stay.
-	[ ] VirtualPetShelterApp: This class will house your main method, and be responsible for reading user input and writing output to the console.
+[ * ] Create a Java project in Eclipse named virtual-pet-shelter.
+[ * ] Be sure to set up your testing environment and use the second script, now that you have experience with both JUnit and Hamcrest.
+[ * ] Set up a .gitignore. Remember through bash you can type subl .gitignore and it will open a text editor for you. Its contents should include (at minimum):
+	[ * ]   .classpath
+	[ * ]   .gradle/
+	[ * ]   .project
+	[ * ]   .settings/
+	[ * ]   bin/
+[ * ] Create a README.md file in your project folder to describe what you’ve done with your project. No fancy formatting is necessary. Just separate paragraphs with an empty line. (If you’d like to learn more about Markdown formatting, check out the Github Markdown Guide.)
+[ * ] Create a GitHub repository also named virtual-pet-shelter and set it up so that you can push your code there from your Eclipse project. Do this now. It’s the least fun part, so just get it out of the way.
+[ * ] Create the following classes along with the test class(es) you feel are necessary:
+	[ * ] VirtualPet: You can start with your class from last week’s assignment or create another.
+	[ * ] VirtualPetShelter: Homeless virtual pets need a place to stay.
+	[ * ] VirtualPetShelterApp: This class will house your main method, and be responsible for reading user input and writing output to the console.
 
 
 Details
