@@ -68,119 +68,37 @@ Our shelter starts with a sad story of a circus leaving its dogs behind to roam 
 	* - [x] Do not include a default (zero arguments) constructor.
 #### Grading
 
-	Category|Max Score
-	--------|---------
-	create a game loop|5
-	accepts user input|5
-	writes output to the console|5
-	tick()|5
-	feed all pets|6
-	water all pets|6
-	play with one pet|10
-	adopt a pet|8
-	receive new pets|8
-	appropriate instance variables|7
-	appropriate methods|7
-	appropriate constructors|8
-	project is driven through tests|10
-	Style/formatting/code quality|10
+Category|Max Score
+--------|---------
+create a game loop|5
+accepts user input|5
+writes output to the console|5
+tick()|5
+feed all pets|6
+water all pets|6
+play with one pet|10
+adopt a pet|8
+receive new pets|8
+appropriate instance variables|7
+appropriate methods|7
+appropriate constructors|8
+project is driven through tests|10
+Style/formatting/code quality|10
+
 #### Strecth Goal
 >DNA! In order to give your pets individual character, include as part of each pet’s state one or more multipliers for needs so that one pet may become hungrier/thirstier/more bored slower/faster than another pet. (Tip: you could create a class to encapsulate this.)
 
 
-Details
+### Details
+I used TDD to drive the creation of the classes, except for the string output methods. This was the first outing I've had with Hamcrest and using `assertThis` and matchers.  I also experimented with setting up the test classes with default values for the different test methods.
 
-We’re going to use TDD to drive the creation of an application that simulates you taking care of the pets in a shelter.
+The VirtualShelterApp contains a intro to the game.  In that intro we setup a quick backstory to the local dog situation and we meet our game's hero, Bruce Wee. After we bring Bruce into the shelter the game loop takes it's first spin.  We print out a list of options and ask the user to select one of them.  All business in the shelter is handled by the VirtualShelter class.  It distrubutes the work to the individual VirtualPet objects through for each loops.  We also have further distanced the other classes from the user by getting all of our status displays from the VirtualShelter class.
 
-Include a game loop in this project, too. It should query the user, then call the appropriate method(s) on VirtualPetShelter and/or VirtualPet. In general, your VirtualPetApp should talk to your VirtualPetShelter, and your VirtualPetShelter should talk to your VirtualPet. Try to avoid VirtualPetApp talking directly to VirtualPet instances, apart from accessing basic information about pets (via get* methods).
+The tick method interacts with all five of the VirtualPet's instance variables.  When the tick is fired the hunger, thirst, and boredom of the VirtualPet object go up by a base value of one.  The stretch goal's DNA traits are applied to the base values when the tick is fired.  The last thing the tick method does is checks to see if the VirtualPet objects in the shelter are still alive.  They can die if their needs go unaddressed by the user.
 
-Example Interactions
-Thank you for volunteering at Big Al's Virtual Pet Shelter and Delicatessen!
+The different methods used to address the VirtualPet's needs have a limiter on them that makes sure that they do not go below zero.  A simple `if` check for negative values resets a negative value to zero.  
 
-This is the status of your pets:
+For the sake of formating I test drove a method to return the VirtualPet's name with spaces added to ensure the name would be 16 characters long.  The method also trims the name down to 16 characters by using the substring method.  
 
-Name	|Hunger	|Thirst	|Boredom
---------|-------|-------|-------
-Joey	|83     |34     |23
-Johnny	|69     |49     |2
-Dee Dee	|39     |18     |88
-Tommy	|59     |19     |37
-
-What would you like to do next?
-
-1. Feed the pets
-2. Water the pets
-3. Play with a pet
-4. Adopt a pet
-5. Admit a pet
-6. Quit
-Example Pet Selection Interaction
-Ok, so you'd like to play with a pet. Please choose one:
-
-[Joey] looks like he's seen better days.
-[Johnny] is a bit nervous.
-[Dee Dee] probably didn't start with that many legs.
-[Tommy] smells like a Stargazer lily fresh with morning dew.
-
-Which pet would you like to play with?
-Tommy
-
-Ok, you play with Tommy.
-Required Tasks to be completed in the order you feel is necessary
-VirtualPetShelterApp class
-Create a main method that…
-implements a game loop.
-asks for user input.
-writes output to the console.
-calls VirtualPetShelter’s tick method after each interaction
-Available user interface actions should include (at minimum)…
-feeding all the pets
-watering all the pets
-playing with an individual pet, which should display a list of pet names and descriptions, allowing a user to select one
-allow adoption of a pet, which should display a list of pet names and descriptions, allowing a user to select one
-allow intake of a pet, prompting the user for the pet’s information, requiring the user to (at minimum) specify name and description
-(Hint: you can use tab characters (“\t”) to align console output in columns.)
-
-VirtualPetShelter class
-include appropriate instance variable(s) to store the pets who reside at the shelter
-include methods that:
-return a Collection of all of the pets in the shelter
-return a specific VirtualPet given its name
-allow intake of a homeless pet
-allow adoption of a homeless pet
-feed all of the pets in the shelter
-water all of the pets in the shelter
-plays (or performs some other interaction(s)) with an individual pet in the shelter
-include a tick method that calls the tick method for each of the pets in the shelter, updating their needs
-VirtualPet class
-In addition to the requirements from last week’s project:
-
-include instance variables representing:
-name
-description
-include a constructor that accepts a name and description
-include a constructor that, in addition to name and description, accepts default values for the pet’s attributes (hunger, boredom, etc)
-Do not include a default (zero arguments) constructor.
-
-Grading
-Here is the rubric.
-	Category						Max Score
-	create a game loop				5
-	accepts user input				5
-	writes output to the console	5
-	tick()							5
-	feed all pets					6
-	water all pets					6
-	play with one pet				10
-	adopt a pet						8
-	receive new pets				8
-	appropriate instance variables	7
-	appropriate methods				7
-	appropriate constructors		8
-	project is driven through tests	10
-	Style/formatting/code quality	10
-
-Stretch Tasks
-Consider any stretch tasks from last week’s project that you did not attempt.
-Keep track of the cleanliness of individual pets’ cages and offer an option in the user interface to clean pet cages
-DNA! In order to give your pets individual character, include as part of each pet’s state one or more multipliers for needs so that one pet may become hungrier/thirstier/more bored slower/faster than another pet. (Tip: you could create a class to encapsulate this.)
+### Version History
+* 1.0 As of Sunday at 0110, I would like to declare this project done.  There will be a review of the submission during the day, but the overall requirements of this project are complete.  
