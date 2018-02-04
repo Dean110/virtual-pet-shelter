@@ -90,7 +90,7 @@ public class VirtualShelterApp {
 			case "5": {
 				System.out.println("A nice family shows up and wants a circus dog for their own!");
 				System.out.println("Which dog would you like to let them take home?");
-
+				System.out.println(myShelter.displayNamesAndDescriptions());
 				dogChoice = input.nextLine();
 				myShelter.adoptOut(dogChoice);
 

@@ -71,9 +71,10 @@ public class VirtualPetShelter {
 	public String displayStatus() {
 		String statusOfPets = "";
 		for (Entry<String, VirtualPet> eachPet : shelterPets.entrySet()) {
-			String key = eachPet.getKey();
-			statusOfPets += shelterPets.get(key).returnStatus() + "\n";
+
+			statusOfPets += eachPet.getValue().returnStatus() + "\n";
 		}
+
 		return statusOfPets;
 	}
 

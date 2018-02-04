@@ -5,7 +5,7 @@ Our week three project.  From our friends at WeCanCodeIT.
 
 ### Overview
 This project built upon our week 2 project, Virtual Pet.  After a week of learning about array lists and shopping carts, building shopping carts and bank tellers, and diving further into TDD by expanding our knowledge of unit testing frameworks to include Hamcrest, we finally get to put the skills to test building a virtual pet shelter. For this project I wanted to add a few of the stretch goals and turn in a project that was more than the bare requirements.  
-Our shelter starts with a sad story of a circus leaving its dogs behind to roam the streets and we take one in.  Once we get started we can get more dogs, send them to live with a family, feed or water all pets, and play with the dogs.  We can care for as many dogs as we can handle, but if they get too needy, the state might come in and shut down our operation.  We need to get those dogs off the streets though!
+Our shelter starts with a sad story of a circus leaving its dogs behind to roam the streets and we take one in.  Once we get started we can get more dogs, send them to live with a family, feed or water all pets, and play with the dogs.  We can care for as many dogs as we can handle, but if they get too needy, the state might come in and shut down our operation.  We need to get those dogs off the streets!
 
 :dog: :dog: :dog: :dog: :dog: :dog: 
 
@@ -39,7 +39,7 @@ Our shelter starts with a sad story of a circus leaving its dogs behind to roam 
 	* - [x] feeding all the pets
 	* - [x] watering all the pets
 	* - [x] playing with an individual pet, which should display a list of pet names and descriptions, allowing a user to select one
-	* - [ ] allow adoption of a pet, which should display a list of pet names and descriptions, allowing a user to select one
+	* - [x] allow adoption of a pet, which should display a list of pet names and descriptions, allowing a user to select one
 	* - [x] allow intake of a pet, prompting the user for the pet’s information, requiring the user to (at minimum) specify name and description
 
 #### VirtualPetShelter class
