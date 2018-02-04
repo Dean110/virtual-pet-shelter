@@ -1,4 +1,4 @@
-﻿Virtual Pet Shelter
+﻿#Virtual Pet Shelter
 
 Our week three project.  From our friends at WeCanCodeIT - "So, you have some experience under your belt in the care and feeding of a virtual pet. It’s time to share that with the community! Time to volunteer!""
 
