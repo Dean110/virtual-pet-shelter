@@ -13,9 +13,9 @@ Our shelter starts with a sad story of a circus leaving its dogs behind to roam 
 
 #### Setup
 
-[ * ] Create a Java project in Eclipse named virtual-pet-shelter.
-[ * ] Be sure to set up your testing environment and use the second script, now that you have experience with both JUnit and Hamcrest.
-[ * ] Set up a .gitignore. Remember through bash you can type subl .gitignore and it will open a text editor for you. Its contents should include (at minimum):
+* - [x] Create a Java project in Eclipse named virtual-pet-shelter.
+* - [x] Be sure to set up your testing environment and use the second script, now that you have experience with both JUnit and Hamcrest.
+* - [x] Set up a .gitignore. Remember through bash you can type subl .gitignore and it will open a text editor for you. Its contents should include (at minimum):
 	[ * ]   .classpath
 	[ * ]   .gradle/
 	[ * ]   .project
