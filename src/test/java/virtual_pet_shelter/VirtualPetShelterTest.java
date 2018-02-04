@@ -120,12 +120,60 @@ public class VirtualPetShelterTest {
 		// Act
 		underTest.admit(testPet);
 		underTest.tick();
-		//Assert
+		// Assert
 		int petHunger = underTest.findPet(PET_NAME).getHunger();
 		int petThirst = underTest.findPet(PET_NAME).getThirst();
 		int petBoredom = underTest.findPet(PET_NAME).getBoredom();
 		assertThat(petHunger, is(51));
 		assertThat(petThirst, is(51));
 		assertThat(petBoredom, is(51));
+	}
+
+	@Test
+	public void shouldReturnNumberOfPetsAtShelterAs2() {
+		underTest.admit(testPet);
+		underTest.admit(new VirtualPet("Bruce", "Foo"));
+		// Assert
+		int petCount = underTest.getNumberOfPets();
+		assertThat(petCount, is(2));
+	}
+
+	@Test
+	public void shouldReturnNumberOfPetsAtShelterAs1() {
+		underTest.admit(testPet);
+		// Assert
+		int petCount = underTest.getNumberOfPets();
+		assertThat(petCount, is(1));
+	}
+
+	@Test
+	public void shouldReturnNumberOfPetsAtShelterAs0() {
+		// Assert
+		int petCount = underTest.getNumberOfPets();
+		assertThat(petCount, is(0));
+	}
+
+	@Test
+	public void shouldReturnTrueForIsThereADeadPet() {
+		underTest.admit(testPet);
+		for (int i = 0; i < 51; i++) {
+			underTest.tick();
+		}
+		boolean result = underTest.isThereADeadPet();
+		assertThat(result, is(true));
+	}
+
+	@Test
+	public void shouldReturnFalseForIsThereADeadPet() {
+		underTest.admit(testPet);
+
+		boolean result = underTest.isThereADeadPet();
+		assertThat(result, is(false));
+	}
+
+	@Test
+	public void shouldReturnFalseForIsThereADeadPetIfWeHaveNoPets() {
+		boolean result = underTest.isThereADeadPet();
+		assertThat(result, is(false));
 	}
 }

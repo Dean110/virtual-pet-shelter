@@ -1,11 +1,14 @@
 package virtual_pet_shelter;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 public class VirtualPet {
 	private String name;
 	private String description;
-	private int hunger;
-	private int thirst;
-	private int boredom;
+	private int hunger = ThreadLocalRandom.current().nextInt(20, 81);
+	private int thirst = ThreadLocalRandom.current().nextInt(20, 81);
+	private int boredom = ThreadLocalRandom.current().nextInt(20, 81);
+	private boolean isThisPetDead = false;
 
 	public String getName() {
 		return name;
@@ -27,6 +30,10 @@ public class VirtualPet {
 		return boredom;
 	}
 
+	public boolean getIsThisPetDead() {
+		return isThisPetDead;
+	}
+
 	public VirtualPet(String name, String description, int hunger, int thirst, int boredom) {
 		this.name = name;
 		this.description = description;
@@ -35,9 +42,10 @@ public class VirtualPet {
 		this.boredom = boredom;
 	}
 
-	@Override
-	public String toString() {
-		return name + " | " + description + " | " + hunger + " | " + thirst + " | " + boredom;
+	public VirtualPet(String name, String description) {
+		this.name = name;
+		this.description = description;
+
 	}
 
 	public void feedPet() {
@@ -56,5 +64,31 @@ public class VirtualPet {
 		this.hunger += 1;
 		this.thirst += 1;
 		this.boredom += 1;
+		if (this.hunger > 100 || this.thirst > 100) {
+			this.isThisPetDead = true;
+		}
 	}
+
+	public String formatPetNameWithSpaces() {
+		if (this.name.length() == 16) {
+			return this.name;
+		} else if (this.name.length() < 16) {
+			while (this.name.length() < 16) {
+				this.name += " ";
+			}
+		} else {
+			this.name = this.name.substring(0, 16);
+		}
+		return this.name;
+	}
+
+	public String returnStatus() {
+		return formatPetNameWithSpaces() + "|" + hunger + "\t|" + thirst + "\t|" + boredom;
+	}
+
+	@Override
+	public String toString() {
+		return name + "\t | " + description + "\t | " + hunger + " | " + thirst + " | " + boredom;
+	}
+
 }
