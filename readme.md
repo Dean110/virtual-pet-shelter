@@ -1,9 +1,16 @@
 ﻿#Virtual Pet Shelter
 
-Our week three project.  From our friends at WeCanCodeIT - "So, you have some experience under your belt in the care and feeding of a virtual pet. It’s time to share that with the community! Time to volunteer!""
+Our week three project.  From our friends at WeCanCodeIT.
+>"So, you have some experience under your belt in the care and feeding of a virtual pet. It’s time to share that with the community! Time to volunteer!""
 
+###Overview
+This project built upon our week 2 project, Virtual Pet.  After a week of learning about array lists and shopping carts, building shopping carts and bank tellers, and diving further into TDD by expanding our knowledge of unit testing frameworks to include Hamcrest, we finally get to put the skills to test building a virtual pet shelter. For this project I wanted to add a few of the stretch goals and turn in a project that was more than the bare requirements.  
+Our shelter starts with a sad story of a circus leaving its dogs behind to roam the streets and we take one in.  Once we get started we can get more dogs, send them to live with a family, feed or water all pets, and play with the dogs.  We can care for as many dogs as we can handle, but if they get too needy, the state might come in and shut down our operation.  We need to get those dogs off the streets though!
+:dog: :dog: :dog: :dog: :dog: :dog: 
 
-Setup
+###Project Requirements
+
+####Setup
 
 [ * ] Create a Java project in Eclipse named virtual-pet-shelter.
 [ * ] Be sure to set up your testing environment and use the second script, now that you have experience with both JUnit and Hamcrest.
