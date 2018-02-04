@@ -16,17 +16,75 @@ Our shelter starts with a sad story of a circus leaving its dogs behind to roam 
 * - [x] Create a Java project in Eclipse named virtual-pet-shelter.
 * - [x] Be sure to set up your testing environment and use the second script, now that you have experience with both JUnit and Hamcrest.
 * - [x] Set up a .gitignore. Remember through bash you can type subl .gitignore and it will open a text editor for you. Its contents should include (at minimum):
-	[ * ]   .classpath
-	[ * ]   .gradle/
-	[ * ]   .project
-	[ * ]   .settings/
-	[ * ]   bin/
-[ * ] Create a README.md file in your project folder to describe what you’ve done with your project. No fancy formatting is necessary. Just separate paragraphs with an empty line. (If you’d like to learn more about Markdown formatting, check out the Github Markdown Guide.)
-[ * ] Create a GitHub repository also named virtual-pet-shelter and set it up so that you can push your code there from your Eclipse project. Do this now. It’s the least fun part, so just get it out of the way.
-[ * ] Create the following classes along with the test class(es) you feel are necessary:
-	[ * ] VirtualPet: You can start with your class from last week’s assignment or create another.
-	[ * ] VirtualPetShelter: Homeless virtual pets need a place to stay.
-	[ * ] VirtualPetShelterApp: This class will house your main method, and be responsible for reading user input and writing output to the console.
+	* - [x] .classpath
+	* - [x] .gradle/
+	* - [x] .project
+	* - [x] .settings/
+	* - [x] bin/
+* - [x] Create a README.md file in your project folder to describe what you’ve done with your project. No fancy formatting is necessary. Just separate paragraphs with an empty line.  
+	* - [x] (If you’d like to learn more about Markdown formatting, check out the Github Markdown Guide.) :100::fire:
+* - [x] Create a GitHub repository also named virtual-pet-shelter and set it up so that you can push your code there from your Eclipse project. Do this now. It’s the least fun part, so just get it out of the way.
+* - [x] Create the following classes along with the test class(es) you feel are necessary:
+	* - [x] VirtualPet: You can start with your class from last week’s assignment or create another.
+	* - [x] VirtualPetShelter: Homeless virtual pets need a place to stay.
+	* - [x] VirtualPetShelterApp: This class will house your main method, and be responsible for reading user input and writing output to the console.
+
+#### VirtualPetShelterApp class
+* - [x] Create a main method that…
+	* - [x] implements a game loop.
+	* - [x] asks for user input.
+	* - [x] writes output to the console.
+	* - [x] calls VirtualPetShelter’s tick method after each interaction
+* - [x] Available user interface actions should include (at minimum)…
+	* - [x] feeding all the pets
+	* - [x] watering all the pets
+	* - [x] playing with an individual pet, which should display a list of pet names and descriptions, allowing a user to select one
+	* - [ ] allow adoption of a pet, which should display a list of pet names and descriptions, allowing a user to select one
+	* - [x] allow intake of a pet, prompting the user for the pet’s information, requiring the user to (at minimum) specify name and description
+
+#### VirtualPetShelter class
+* - [x] Include appropriate instance variable(s) to store the pets who reside at the shelter
+* - [x] Include methods that:
+	* - [x] return a Collection of all of the pets in the shelter
+	* - [x] return a specific VirtualPet given its name
+	* - [x] allow intake of a homeless pet
+	* - [x] allow adoption of a homeless pet
+	* - [x] feed all of the pets in the shelter
+	* - [x] water all of the pets in the shelter
+	* - [x] plays (or performs some other interaction(s)) with an individual pet in the shelter
+* - [x] Include a tick method that calls the tick method for each of the pets in the shelter, updating their needs
+
+#### VirtualPet class
+* - [x] The requirements from last week’s project:
+>	Create a tick() method that represents the passage of time.
+> 	Create at least three instance variables (aka attributes aka properties aka fields).
+>	Create at least three methods (messages you send to your pet).
+
+* - [x] Include instance variables representing:
+	* - [x] name
+	* - [x] description
+	* - [x] include a constructor that accepts a name and description
+	* - [x] include a constructor that, in addition to name and description, accepts default values for the pet’s attributes (hunger, boredom, etc)
+	* - [x] Do not include a default (zero arguments) constructor.
+#### Grading
+
+	##### Category|Max Score
+	create a game loop|5
+	accepts user input|5
+	writes output to the console|5
+	tick()|5
+	feed all pets|6
+	water all pets|6
+	play with one pet|10
+	adopt a pet|8
+	receive new pets|8
+	appropriate instance variables|7
+	appropriate methods|7
+	appropriate constructors|8
+	project is driven through tests|10
+	Style/formatting/code quality|10
+#### Strecth Goal
+>DNA! In order to give your pets individual character, include as part of each pet’s state one or more multipliers for needs so that one pet may become hungrier/thirstier/more bored slower/faster than another pet. (Tip: you could create a class to encapsulate this.)
 
 
 Details
