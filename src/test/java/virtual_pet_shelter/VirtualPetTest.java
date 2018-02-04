@@ -36,17 +36,94 @@ public class VirtualPetTest {
 
 	@Test
 	public void petsShouldHaveARandomStartingHungerBetween20And80() {
-		assertThat(testPet.getHunger()>=20, is(true));
-		assertThat(testPet.getHunger()<=80, is(true));
+		assertThat(testPet.getHunger() >= 20, is(true));
+		assertThat(testPet.getHunger() <= 80, is(true));
 	}
+
 	@Test
 	public void petsShouldHaveARandomStartingThirstBetween20And80() {
-		assertThat(testPet.getThirst()>=20, is(true));
-		assertThat(testPet.getThirst()<=80, is(true));
+		assertThat(testPet.getThirst() >= 20, is(true));
+		assertThat(testPet.getThirst() <= 80, is(true));
 	}
+
 	@Test
 	public void petsShouldHaveARandomStartingBoredomBetween20And80() {
-		assertThat(testPet.getBoredom()>=20, is(true));
-		assertThat(testPet.getBoredom()<=80, is(true));
+		assertThat(testPet.getBoredom() >= 20, is(true));
+		assertThat(testPet.getBoredom() <= 80, is(true));
+	}
+
+	@Test
+	public void feedPetShouldNotLowerHungerBelow0() {
+		testPet = new VirtualPet(PET_NAME, PET_DESCRIPTION, PET_HUNGER, PET_THIRST, PET_BOREDOM);
+		for (int i = 0; i <= 10; i++) {
+			testPet.feedPet();
+		}
+		int result = testPet.getHunger();
+		assertThat(result, is(0));
+	}
+
+	@Test
+	public void waterPetShouldNotLowerThirstBelow0() {
+		testPet = new VirtualPet(PET_NAME, PET_DESCRIPTION, PET_HUNGER, PET_THIRST, PET_BOREDOM);
+		for (int i = 0; i <= 10; i++) {
+			testPet.waterPet();
+		}
+		int result = testPet.getThirst();
+		assertThat(result, is(0));
+	}
+
+	@Test
+	public void playWithPetShouldNotLowerBoredomBelow0() {
+		testPet = new VirtualPet(PET_NAME, PET_DESCRIPTION, PET_HUNGER, PET_THIRST, PET_BOREDOM);
+		for (int i = 0; i <= 10; i++) {
+			testPet.playWithPet();
+		}
+		int result = testPet.getBoredom();
+		assertThat(result, is(0));
+	}
+
+	@Test
+	public void virtualPetDnaHungryIncreasesAPetsHungerTickRate() {
+		testPet = new VirtualPet(PET_NAME, PET_DESCRIPTION, PET_HUNGER, PET_THIRST, PET_BOREDOM, new PetDNA("hungry"));
+		testPet.tick();
+		int resultHunger = testPet.getHunger();
+		int resultThirst = testPet.getThirst();
+		int resultBoredom = testPet.getBoredom();
+		assertThat(resultHunger, is(53));
+		assertThat(resultThirst, is(51));
+		assertThat(resultBoredom, is(51));
+	}
+
+	@Test
+	public void virtualPetDnaRestlessIncreasesAPetsBoredomTickRate() {
+		testPet = new VirtualPet(PET_NAME, PET_DESCRIPTION, PET_HUNGER, PET_THIRST, PET_BOREDOM,
+				new PetDNA("restless"));
+		testPet.tick();
+		int resultHunger = testPet.getHunger();
+		int resultThirst = testPet.getThirst();
+		int resultBoredom = testPet.getBoredom();
+		assertThat(resultHunger, is(51));
+		assertThat(resultThirst, is(51));
+		assertThat(resultBoredom, is(53));
+	}
+
+	@Test
+	public void virtualPetDnaThirstyIncreasesAPetsThirstTickRate() {
+		testPet = new VirtualPet(PET_NAME, PET_DESCRIPTION, PET_HUNGER, PET_THIRST, PET_BOREDOM, new PetDNA("thirsty"));
+		testPet.tick();
+		int resultHunger = testPet.getHunger();
+		int resultThirst = testPet.getThirst();
+		int resultBoredom = testPet.getBoredom();
+		assertThat(resultHunger, is(51));
+		assertThat(resultThirst, is(53));
+		assertThat(resultBoredom, is(51));
+	}
+
+	@Test
+	public void virtualPetShouldReturnDnaType() {
+		testPet = new VirtualPet(PET_NAME, PET_DESCRIPTION, PET_HUNGER, PET_THIRST, PET_BOREDOM, new PetDNA("thirsty"));
+		String virtualPetDna = testPet.getDnaTrait();
+		assertThat(virtualPetDna, is("thirsty"));
+
 	}
 }

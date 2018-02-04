@@ -28,7 +28,7 @@ public class VirtualPetShelter {
 
 	public void feedPets() {
 		for (Entry<String, VirtualPet> fedPet : shelterPets.entrySet()) {
-			
+
 			fedPet.getValue().feedPet();
 		}
 	}
@@ -41,7 +41,7 @@ public class VirtualPetShelter {
 
 	public void playWithPet(String petName) {
 		this.shelterPets.get(petName).playWithPet();
-		
+
 	}
 
 	public void tick() {
@@ -49,31 +49,41 @@ public class VirtualPetShelter {
 			String key = tickedPet.getKey();
 			shelterPets.get(key).tick();
 		}
-		
+
 	}
 
 	public int getNumberOfPets() {
-	
+
 		return shelterPets.size();
 	}
 
 	public boolean isThereADeadPet() {
-		boolean doWeHaveADeadPet= false;
+		boolean doWeHaveADeadPet = false;
 		for (Entry<String, VirtualPet> checkedPet : shelterPets.entrySet()) {
 			String key = checkedPet.getKey();
-			if(shelterPets.get(key).getIsThisPetDead()) {
+			if (shelterPets.get(key).getIsThisPetDead()) {
 				doWeHaveADeadPet = true;
 			}
 		}
 		return doWeHaveADeadPet;
 	}
+
 	public String displayStatus() {
-		String statusOfPets="";
-		for (Entry<String, VirtualPet> eachPet: shelterPets.entrySet()) {
+		String statusOfPets = "";
+		for (Entry<String, VirtualPet> eachPet : shelterPets.entrySet()) {
 			String key = eachPet.getKey();
-			statusOfPets += shelterPets.get(key).returnStatus() +"\n";
-		}return statusOfPets;
+			statusOfPets += shelterPets.get(key).returnStatus() + "\n";
+		}
+		return statusOfPets;
 	}
 
-	
+	public String displayNamesAndDescriptions() {
+		String namesAndDescriptions = "";
+		for (Entry<String, VirtualPet> eachPet : shelterPets.entrySet()) {
+			namesAndDescriptions += "[" + eachPet.getValue().getName() + "] " + eachPet.getValue().getDescription()
+					+ "\n";
+		}
+		return namesAndDescriptions;
+	}
+
 }
