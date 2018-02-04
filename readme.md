@@ -56,9 +56,9 @@ Our shelter starts with a sad story of a circus leaving its dogs behind to roam 
 
 #### VirtualPet class
 * - [x] The requirements from last week’s project:
->	Create a tick() method that represents the passage of time.
-> 	Create at least three instance variables (aka attributes aka properties aka fields).
->	Create at least three methods (messages you send to your pet).
+>	* Create a tick() method that represents the passage of time.
+> 	* Create at least three instance variables (aka attributes aka properties aka fields).
+>	* Create at least three methods (messages you send to your pet).
 
 * - [x] Include instance variables representing:
 	* - [x] name
@@ -68,7 +68,8 @@ Our shelter starts with a sad story of a circus leaving its dogs behind to roam 
 	* - [x] Do not include a default (zero arguments) constructor.
 #### Grading
 
-	##### Category|Max Score
+	Category|Max Score
+	--------|---------
 	create a game loop|5
 	accepts user input|5
 	writes output to the console|5
