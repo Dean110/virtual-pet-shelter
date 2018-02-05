@@ -47,8 +47,8 @@ public class VirtualShelterApp {
 			System.out.println();
 			System.out.println("What would you like to do next?");
 			System.out.println("-------------------------------");
-			System.out.println("1. Water all dogs.");
-			System.out.println("2. Feed all dogs.");
+			System.out.println("1. Feed all dogs.");
+			System.out.println("2. Water all dogs.");
 			System.out.println("3. Play with a dog.");
 			System.out.println("4. Bring a dog in off the streets.");
 			System.out.println("5. Send a dog to a new home.");
@@ -57,11 +57,11 @@ public class VirtualShelterApp {
 
 			switch (mainMenuChoice) {
 			case "1": {
-				myShelter.waterPets();
+				myShelter.feedPets();
 				break;
 			}
 			case "2": {
-				myShelter.feedPets();
+				myShelter.waterPets();
 				break;
 			}
 			case "3": {

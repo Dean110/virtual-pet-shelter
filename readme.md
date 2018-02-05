@@ -102,3 +102,4 @@ For the sake of formating I test drove a method to return the VirtualPet's name 
 
 ### Version History
 * 1.0 As of Sunday at 0110, I would like to declare this project done.  There will be a review of the submission during the day, but the overall requirements of this project are complete.  
+* 1.1 As of Sunday at 2330, all tasks are completed, VirtualPetApp testing seems to yield results and puppy DNA was introduced.  The dogs now inherit one of four DNA driven behaviors when they are instantiated.  When you admit a new dog it outputs a line to tell you the inherited behavior, but keeps the information hidden after that for game reasons. (Is this an example of calling a bug a feature?)

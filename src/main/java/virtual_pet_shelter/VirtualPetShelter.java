@@ -10,6 +10,7 @@ public class VirtualPetShelter {
 
 	public void admit(VirtualPet pet) {
 		this.shelterPets.put(pet.getName(), pet);
+
 	}
 
 	public VirtualPet findPet(String petName) {
